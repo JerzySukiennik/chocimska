@@ -1,0 +1,78 @@
+/* Theme "Szkolny": the school's own palette from the logo (navy, teal, orange, magenta), condensed signage type, running kids. */
+html[data-theme=szkolny]{
+  --bg:#fff;--surface:#eef0f8;--fg:#14183a;--muted:#4d5273;--line:#d9dcec;
+  --a:#1b2150;--a-ink:#fff;--b:#c8451f;--teal:#4fb8aa;--orange:#e8592f;--pink:#d4177f;
+  --fd:'Big Shoulders Display','Figtree',sans-serif;--fb:'Figtree',system-ui,sans-serif;
+  --fd-w:800;--fd-t:uppercase;--fd-ls:.005em;--fd-lh:.95;--r:18px;
+}
+[data-theme=szkolny] body{font-family:var(--fb)}
+[data-theme=szkolny] h1,[data-theme=szkolny] h2{letter-spacing:.005em}
+[data-theme=szkolny] .progress{top:calc(var(--head) - 4px);height:4px;background:var(--surface)}
+[data-theme=szkolny] .progress i{background:linear-gradient(90deg,var(--teal),var(--orange),var(--pink))}
+[data-theme=szkolny] .progress::after{content:'';position:absolute;bottom:3px;left:calc(var(--p,0)*(100% - 22px));width:22px;height:30px;background:url(../img/kid-orange.png) center bottom/contain no-repeat;animation:run .5s steps(2) infinite}
+@keyframes run{50%{transform:translateY(-2px) rotate(-3deg)}}
+[data-theme=szkolny] .top{border-bottom:0}
+[data-theme=szkolny] .nl{font-weight:700;letter-spacing:.01em}
+[data-theme=szkolny] .nl[aria-current=page],[data-theme=szkolny] .grp.cur>.nl{box-shadow:inset 0 -3px 0 var(--orange)}
+[data-theme=szkolny] .kicker{color:var(--b);font-family:var(--fb)}
+
+[data-theme=szkolny] .hero{background:var(--a);min-height:min(88vh,860px);display:grid;align-items:end}
+[data-theme=szkolny] .hero-media{position:absolute;inset:0}
+[data-theme=szkolny] .hero-media img{height:100%;aspect-ratio:auto;object-position:50% 62%;filter:saturate(1.08)}
+[data-theme=szkolny] .hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,33,80,0) 35%,rgba(27,33,80,.78) 100%)}
+[data-theme=szkolny] .hero-copy{color:#fff;padding-top:clamp(120px,22vh,260px);padding-bottom:clamp(40px,7vw,88px);width:100%}
+[data-theme=szkolny] .eyebrow{display:inline-block;background:var(--orange);color:#fff;padding:.4em .9em;border-radius:99px;font-weight:700;font-size:.85rem}
+[data-theme=szkolny] .hero h1{font-size:clamp(3.4rem,11vw,9.6rem);line-height:.92;margin:0 0 .3em}
+[data-theme=szkolny] .hero h1 span,[data-theme=szkolny] .hero h1 em{display:block;width:fit-content;font-style:normal;background:var(--a);color:#fff;padding:.04em .16em .15em;margin-bottom:.06em}
+[data-theme=szkolny] .hero h1 em{background:var(--orange)}
+[data-theme=szkolny] .hero .lead{color:#fff;max-width:46ch;text-shadow:0 1px 18px rgba(0,0,0,.4)}
+[data-theme=szkolny] .hero .btn{background:#fff;color:var(--a);border-color:#fff}
+[data-theme=szkolny] .hero .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+[data-theme=szkolny] .hero .btn:hover{background:var(--teal);border-color:var(--teal);color:var(--a)}
+[data-theme=szkolny] .deco{position:absolute;left:0;right:0;bottom:0;height:130px;overflow:hidden}
+[data-theme=szkolny] .deco i{position:absolute;bottom:-4px;height:var(--h);aspect-ratio:var(--w)/var(--hh);background:var(--img) center bottom/contain no-repeat;left:-20%;animation:dash var(--t) cubic-bezier(.3,.6,.2,1) var(--d) forwards,bob .45s steps(2) calc(var(--d) + .2s) infinite alternate;opacity:.95}
+[data-theme=szkolny] .deco i:nth-child(1){--img:url(../img/kid-teal.png);--h:110px;--w:156;--hh:193;--t:2.6s;--d:.2s;--x:16%}
+[data-theme=szkolny] .deco i:nth-child(2){--img:url(../img/kid-orange.png);--h:96px;--w:139;--hh:192;--t:2.2s;--d:.5s;--x:46%}
+[data-theme=szkolny] .deco i:nth-child(3){--img:url(../img/kid-pink.png);--h:116px;--w:287;--hh:208;--t:3s;--d:.7s;--x:72%}
+@keyframes dash{to{left:var(--x)}}
+@keyframes bob{to{transform:translateY(-5px) rotate(-2deg)}}
+@media(max-width:700px){[data-theme=szkolny] .deco{height:90px}[data-theme=szkolny] .deco i{--h:70px!important}[data-theme=szkolny] .hero-copy{padding-top:200px}}
+
+[data-theme=szkolny] .facts{background:var(--surface)}
+[data-theme=szkolny] .facts dd:not(.sm){color:var(--a);font-size:clamp(3rem,7vw,5.4rem)}
+[data-theme=szkolny] .facts dl>div:nth-child(1) dd:not(.sm){color:var(--teal)}
+[data-theme=szkolny] .facts dl>div:nth-child(2) dd:not(.sm){color:var(--orange)}
+[data-theme=szkolny] .facts dl>div:nth-child(3) dd:not(.sm){color:var(--pink)}
+[data-theme=szkolny] .facts dl>div:nth-child(4) dd:not(.sm){color:var(--a)}
+[data-theme=szkolny] .intro h2{font-size:clamp(2.4rem,5vw,4.4rem)}
+[data-theme=szkolny] .intro .prose{columns:1;font-size:1.08rem}
+[data-theme=szkolny] .card{background:#fff;border:2px solid var(--a);box-shadow:6px 6px 0 var(--a)}
+[data-theme=szkolny] .card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--orange)}
+[data-theme=szkolny] .card strong{font-size:1.55rem}
+[data-theme=szkolny] .card time{color:var(--b)}
+[data-theme=szkolny] .tiles li:nth-child(1) a{background:var(--teal);color:var(--a)}
+[data-theme=szkolny] .tiles li:nth-child(2) a{background:var(--orange);color:#fff}
+[data-theme=szkolny] .tiles li:nth-child(3) a{background:var(--pink);color:#fff}
+[data-theme=szkolny] .tiles li:nth-child(4) a{background:var(--a);color:#fff}
+[data-theme=szkolny] .tiles a:hover{background:var(--fg);color:#fff;transform:translateY(-6px) rotate(-1deg)}
+[data-theme=szkolny] .tiles span{opacity:.9}
+[data-theme=szkolny] .tiles strong{font-size:2rem}
+[data-theme=szkolny] .bld article{background:var(--surface);border-left:8px solid var(--teal)}
+[data-theme=szkolny] .bld article:nth-child(2){border-left-color:var(--pink)}
+[data-theme=szkolny] .chips a{border:2px solid var(--a);font-weight:700}
+[data-theme=szkolny] .chips li:nth-child(3n+1) a:hover{background:var(--teal);border-color:var(--teal);color:var(--a)}
+[data-theme=szkolny] .chips li:nth-child(3n+2) a:hover{background:var(--orange);border-color:var(--orange)}
+[data-theme=szkolny] .chips li:nth-child(3n+3) a:hover{background:var(--pink);border-color:var(--pink)}
+[data-theme=szkolny] .pg-h{background:var(--surface);padding-bottom:clamp(28px,5vw,56px);position:relative}
+[data-theme=szkolny] .pg-h::after{content:'';position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--teal) 0 33%,var(--orange) 33% 66%,var(--pink) 66%)}
+[data-theme=szkolny] .pg-h h1{color:var(--a);font-size:clamp(3rem,8vw,6.4rem)}
+[data-theme=szkolny] .prose h2{font-size:clamp(2rem,4vw,3rem)}
+[data-theme=szkolny] .prose h3{font-size:clamp(1.5rem,2.6vw,2rem);color:var(--a)}
+[data-theme=szkolny] .prose blockquote{border-left-color:var(--teal)}
+[data-theme=szkolny] .prose a.file::before{background:var(--orange)}
+[data-theme=szkolny] .foot{background:var(--a)}
+[data-theme=szkolny] .foot::before{content:'';display:block;height:6px;background:linear-gradient(90deg,var(--teal) 0 33%,var(--orange) 33% 66%,var(--pink) 66%);margin:0}
+[data-theme=szkolny] .yt-ic{background:var(--orange)}
+[data-theme=szkolny] .years button[aria-pressed=true]{background:var(--orange);border-color:var(--orange)}
+[data-theme=szkolny] .btn:hover{background:var(--orange);border-color:var(--orange);color:#fff}
+[data-theme=szkolny] .gal img{border:2px solid var(--a)}

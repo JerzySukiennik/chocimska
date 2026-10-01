@@ -1,0 +1,96 @@
+/* Theme "Minimal": photography first, one typeface, no accent colour. The hero photo settles into the page as you scroll. */
+html[data-theme=minimal]{
+  --bg:#fff;--surface:#f5f5f6;--fg:#0e0e10;--muted:#6a6a72;--line:#e7e7ea;
+  --a:#0e0e10;--a-ink:#fff;--b:#6a6a72;
+  --fd:'Geist','Figtree',system-ui,sans-serif;--fb:'Geist','Figtree',system-ui,sans-serif;
+  --fd-w:600;--fd-t:none;--fd-ls:-.035em;--fd-lh:1;--r:10px;--head:64px;
+}
+@media(prefers-color-scheme:dark){html[data-theme=minimal]:not(.a11y-contrast){--bg:#0b0b0c;--surface:#161618;--fg:#f4f4f5;--muted:#9a9aa3;--line:#26262a;--a:#f4f4f5;--a-ink:#0b0b0c;--b:#9a9aa3}}
+[data-theme=minimal] body{font-size:1.05rem;line-height:1.6}
+[data-theme=minimal] :focus-visible{outline-color:#0a6cff}
+[data-theme=minimal] .top{background:color-mix(in srgb,var(--bg) 78%,transparent);-webkit-backdrop-filter:saturate(1.8) blur(18px);backdrop-filter:saturate(1.8) blur(18px)}
+[data-theme=minimal] .brand img{height:28px;filter:grayscale(1) contrast(1.1)}
+@media(prefers-color-scheme:dark){[data-theme=minimal] .brand img{filter:grayscale(1) invert(1)}[data-theme=minimal] .flogo{filter:none}}
+[data-theme=minimal] .nl{font-weight:500;font-size:.92rem;color:var(--muted)}
+[data-theme=minimal] .nl:hover,[data-theme=minimal] .grp.open>.nl{background:transparent;color:var(--fg)}
+[data-theme=minimal] .nl[aria-current=page],[data-theme=minimal] .grp.cur>.nl{color:var(--fg);box-shadow:none;border-radius:999px;background:var(--surface)}
+[data-theme=minimal] .grp>ul{border-radius:16px;border:0;box-shadow:0 0 0 1px var(--line),0 30px 60px -24px rgba(0,0,0,.35);background:color-mix(in srgb,var(--bg) 92%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
+[data-theme=minimal] .grp>ul a{color:var(--muted)}
+[data-theme=minimal] .grp>ul a:hover,[data-theme=minimal] .grp>ul a[aria-current=page]{color:var(--fg);background:var(--surface)}
+[data-theme=minimal] .progress{height:2px}
+[data-theme=minimal] .progress i{background:var(--fg)}
+[data-theme=minimal] .kicker{color:var(--muted);letter-spacing:.12em;font-weight:600}
+[data-theme=minimal] .btn{border-radius:999px;background:var(--fg);border-color:var(--fg);color:var(--bg);font-weight:600;padding:.8em 1.4em}
+[data-theme=minimal] .btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+[data-theme=minimal] .btn:hover{transform:scale(1.03)}
+[data-theme=minimal] .more{color:var(--fg)}
+
+[data-theme=minimal] .hero{padding:12px;background:var(--bg)}
+[data-theme=minimal] .hero-media{position:relative;height:min(86vh,900px);border-radius:28px;overflow:hidden;background:#111;transform-origin:50% 100%}
+[data-theme=minimal] .hero-media img{height:100%;aspect-ratio:auto;object-position:50% 60%;transform:scale(1.04)}
+[data-theme=minimal] .hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.62) 100%)}
+[data-theme=minimal] .hero-copy{position:absolute;left:0;right:0;bottom:12px;color:#fff;padding:clamp(24px,4vw,56px);max-width:none;margin:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:2rem;align-items:end}
+[data-theme=minimal] .hero-copy .eyebrow{grid-column:1/-1;opacity:.85;margin:0;font-weight:500}
+[data-theme=minimal] .hero h1{font-size:clamp(3rem,9vw,8.4rem);margin:0;line-height:.92;color:#fff;font-weight:600}
+[data-theme=minimal] .hero h1 span,[data-theme=minimal] .hero h1 em{display:block;font-style:normal}
+[data-theme=minimal] .hero h1 em{opacity:.62}
+[data-theme=minimal] .hero .lead{color:#fff;opacity:.9;font-size:1.05rem;margin:0}
+[data-theme=minimal] .hero .cta{margin:0;grid-column:2}
+[data-theme=minimal] .hero .btn{background:#fff;color:#0e0e10;border-color:#fff}
+[data-theme=minimal] .hero .btn.ghost{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.35);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+[data-theme=minimal] .deco{display:none}
+@media(max-width:860px){[data-theme=minimal] .hero-copy{grid-template-columns:1fr;gap:1rem}[data-theme=minimal] .hero .cta{grid-column:1}[data-theme=minimal] .hero-media{height:84vh;border-radius:22px}}
+@supports (animation-timeline:scroll()){
+  [data-theme=minimal] .hero-media{animation:settle linear both;animation-timeline:view();animation-range:exit 0% exit 70%}
+  [data-theme=minimal] .hero-media img{animation:push linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+  @keyframes settle{to{transform:scale(.94);border-radius:44px}}
+  @keyframes push{to{transform:scale(1.14) translateY(4%)}}
+}
+
+[data-theme=minimal] .facts dd:not(.sm){font-weight:600;color:var(--fg);letter-spacing:-.045em;font-size:clamp(2.8rem,6vw,5rem)}
+[data-theme=minimal] .facts dl>div{border-color:var(--line)}
+[data-theme=minimal] .intro h2{font-size:clamp(2.2rem,4.4vw,3.8rem)}
+[data-theme=minimal] .intro .prose{color:var(--muted)}
+[data-theme=minimal] .intro .prose p:first-child{color:var(--fg);font-size:1.2rem}
+[data-theme=minimal] .sec-h h2{font-size:clamp(2rem,4.4vw,3.6rem)}
+[data-theme=minimal] .card{background:transparent;border-radius:0}
+[data-theme=minimal] .card:hover{transform:none}
+[data-theme=minimal] .card-img{border-radius:var(--r);aspect-ratio:3/2}
+[data-theme=minimal] .card-b{padding:1rem 0 0}
+[data-theme=minimal] .card strong{font-size:1.2rem;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+[data-theme=minimal] .card .ex{display:none}
+[data-theme=minimal] .card.big .ex{display:-webkit-box}
+[data-theme=minimal] .tiles{gap:0;border-top:1px solid var(--line)}
+[data-theme=minimal] .tiles li{border-bottom:1px solid var(--line)}
+[data-theme=minimal] .tiles a{background:transparent;min-height:0;flex-direction:row;align-items:center;gap:1.5rem;padding:1.6rem .2rem;border-radius:0}
+[data-theme=minimal] .tiles a:hover{background:transparent;color:var(--fg);transform:none;padding-left:1rem}
+[data-theme=minimal] .tiles a{transition:padding .4s var(--ease)}
+[data-theme=minimal] .tiles strong{font-size:clamp(1.5rem,3vw,2.3rem);min-width:min(40%,330px)}
+[data-theme=minimal] .tiles span{flex:1;color:var(--muted)}
+[data-theme=minimal] .tiles i{margin:0}
+[data-theme=minimal] .tiles{grid-template-columns:1fr}
+@media(max-width:700px){[data-theme=minimal] .tiles a{flex-wrap:wrap;gap:.3rem}[data-theme=minimal] .tiles span{flex-basis:100%;order:3}[data-theme=minimal] .tiles i{margin-left:auto}}
+[data-theme=minimal] .bld article,[data-theme=minimal] .bcard{background:var(--surface);border-radius:20px}
+[data-theme=minimal] .chips a{border-color:var(--line);font-weight:500;color:var(--muted)}
+[data-theme=minimal] .chips a:hover{background:var(--fg);border-color:var(--fg);color:var(--bg)}
+[data-theme=minimal] .pg-h h1{font-size:clamp(2.8rem,7vw,5.8rem)}
+[data-theme=minimal] .prose{font-size:1.08rem}
+[data-theme=minimal] .prose p,[data-theme=minimal] .prose li{color:color-mix(in srgb,var(--fg) 82%,var(--bg))}
+[data-theme=minimal] .prose a.file{background:var(--surface)}
+[data-theme=minimal] .prose a.file::before{background:var(--fg);color:var(--bg)}
+[data-theme=minimal] .prose > img,[data-theme=minimal] .prose p>img{border-radius:18px}
+[data-theme=minimal] .gal{gap:6px}
+[data-theme=minimal] .gal img{border-radius:6px}
+[data-theme=minimal] .prose ul.people img{border-radius:14px;filter:grayscale(1);transition:filter .5s var(--ease)}
+[data-theme=minimal] .prose ul.people li:hover img{filter:none}
+[data-theme=minimal] .pn a,[data-theme=minimal] .cta-box,[data-theme=minimal] .note{background:var(--surface);border-radius:16px}
+[data-theme=minimal] .years button[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+[data-theme=minimal] .years button,[data-theme=minimal] .search input{border-color:var(--line)}
+[data-theme=minimal] .foot{background:var(--surface);color:var(--fg);border-top:1px solid var(--line)}
+[data-theme=minimal] .foot-b{border-color:var(--line)}
+[data-theme=minimal] .flogo{background:transparent;padding:0;filter:grayscale(1)}
+@media(prefers-color-scheme:dark){[data-theme=minimal] .flogo{filter:grayscale(1) invert(1)}}
+[data-theme=minimal] .yt,[data-theme=minimal] .vid{border-radius:22px}
+[data-theme=minimal] .yt-ic{background:var(--fg);color:var(--bg)}
+[data-theme=minimal] .faq summary{font-weight:600}
+[data-theme=minimal] .hero h1{grid-column:1/-1}
