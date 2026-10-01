@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pl" data-theme="szkolny">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Szkoła Podstawowa Chocimska</title>
+<meta name="description" content="Prywatna szkoła podstawowa na Starym Mokotowie w Warszawie, inspirowana pedagogiką waldorfską. Rekrutacja, aktualności, dokumenty, kontakt.">
+<meta name="theme-color" content="#1b2150">
+<link rel="icon" href="img/icon.png">
+<link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/szkolny.css">
+<link rel="stylesheet" href="css/lazura.css">
+<link rel="stylesheet" href="css/zeszyt.css">
+<link rel="stylesheet" href="css/minimal.css">
+<script>
+try{var t=localStorage.getItem('sp-theme');if(t&&/^(szkolny|lazura|zeszyt|minimal)$/.test(t))document.documentElement.dataset.theme=t;var a=JSON.parse(localStorage.getItem('sp-a11y')||'{}');if(a.big)document.documentElement.classList.add('a11y-big');if(a.contrast)document.documentElement.classList.add('a11y-contrast');if(a.still)document.documentElement.classList.add('a11y-still')}catch(e){}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Przejdź do treści</a>
+<div class="progress" aria-hidden="true"><i></i></div>
+<header class="top" id="top">
+  <div class="top-in">
+    <a class="brand" href="#/" aria-label="Szkoła Podstawowa Chocimska, strona główna"><img src="img/logo.png" alt="" width="1137" height="222"></a>
+    <nav class="nav" id="nav" aria-label="Główna nawigacja"></nav>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav"><span class="bars" aria-hidden="true"><i></i><i></i></span><span class="sr">Menu</span></button>
+  </div>
+</header>
+<main id="main" tabindex="-1"></main>
+<footer class="foot" id="foot"></footer>
+
+<div class="themebar" id="themebar" role="group" aria-label="Wybór wyglądu strony (wersja demonstracyjna)">
+  <span class="tb-label">Wygląd <em>demo</em></span>
+  <button data-t="szkolny" aria-pressed="true"><i style="--c:#e8592f"></i>Szkolny</button>
+  <button data-t="lazura" aria-pressed="false"><i style="--c:#8f8ae6"></i>Lazura</button>
+  <button data-t="zeszyt" aria-pressed="false"><i style="--c:#2447c4"></i>Zeszyt</button>
+  <button data-t="minimal" aria-pressed="false"><i style="--c:#111"></i>Minimal</button>
+</div>
+
+<dialog id="lightbox" class="lb" aria-label="Podgląd zdjęcia">
+  <button class="lb-x" aria-label="Zamknij">×</button>
+  <button class="lb-p" aria-label="Poprzednie zdjęcie">‹</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="lb-n" aria-label="Następne zdjęcie">›</button>
+</dialog>
+
+<dialog id="privacy" class="dlg" aria-labelledby="privT">
+  <form method="dialog">
+    <h2 id="privT">Ustawienia prywatności</h2>
+    <p>Ta strona nie używa reklam, analityki ani śledzenia. Nie pokazujemy banera cookies, bo nie ma czego zatwierdzać. Zapisujemy tylko to, co jest potrzebne, żeby strona działała tak, jak ją ustawisz.</p>
+    <ul class="kv">
+      <li><strong>Wygląd i dostępność</strong><span>Zapamiętujemy wybrany wygląd, rozmiar tekstu i kontrast w Twojej przeglądarce (localStorage). Nie opuszcza Twojego urządzenia.</span></li>
+      <li><strong>Filmy z YouTube</strong><span>Dopóki ich nie uruchomisz, YouTube nie dostaje żadnych danych. Po uruchomieniu filmu YouTube może zapisać własne pliki cookie.</span></li>
+    </ul>
+    <label class="switch"><input type="checkbox" id="ytAlways"><span>Zawsze ładuj filmy z YouTube od razu po kliknięciu, bez pytania</span></label>
+    <p class="small"><a href="#/polityka-prywatnosci">Polityka prywatności</a> · <a href="#/cookies">Cookies i pamięć przeglądarki</a></p>
+    <div class="dlg-act"><button class="btn" value="ok">Gotowe</button></div>
+  </form>
+</dialog>
+
+<dialog id="a11y" class="dlg" aria-labelledby="a11yT">
+  <form method="dialog">
+    <h2 id="a11yT">Dostępność</h2>
+    <label class="switch"><input type="checkbox" id="aBig"><span>Większy tekst</span></label>
+    <label class="switch"><input type="checkbox" id="aContrast"><span>Wysoki kontrast</span></label>
+    <label class="switch"><input type="checkbox" id="aStill"><span>Bez animacji</span></label>
+    <p class="small"><a href="#/dostepnosc">Deklaracja dostępności</a></p>
+    <div class="dlg-act"><button class="btn" value="ok">Gotowe</button></div>
+  </form>
+</dialog>
+
+<script>window.SP_ROOT="../"</script>
+<script src="js/legal.js" defer></script>
+<script src="js/app.js" defer></script>
+</body>
+</html>

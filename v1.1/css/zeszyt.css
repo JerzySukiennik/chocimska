@@ -1,0 +1,91 @@
+/* Theme "Zeszyt": a school exercise book. Squared paper, blue ink, highlighter, photos taped to the page. */
+html[data-theme=zeszyt]{
+  --bg:#fdfdf6;--surface:#fff;--fg:#1e2430;--muted:#4c5566;--line:#c8d2ee;
+  --a:#2447c4;--a-ink:#fff;--b:#17766b;--hl:#ffe45e;--tape:rgba(255,226,120,.78);--paper:#fff;
+  --fd:'Patrick Hand','Atkinson Hyperlegible',cursive;--fb:'Atkinson Hyperlegible',system-ui,sans-serif;
+  --fd-w:400;--fd-t:none;--fd-ls:0;--fd-lh:1.05;--r:4px;
+}
+[data-theme=zeszyt] body{background-color:var(--bg);background-image:linear-gradient(rgba(36,71,196,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(36,71,196,.13) 1px,transparent 1px);background-size:26px 26px;background-position:-1px -1px;font-size:1.08rem}
+[data-theme=zeszyt] body::before{content:'';position:absolute;top:0;bottom:0;left:clamp(10px,4.4vw,70px);width:2px;background:rgba(36,71,196,.45);pointer-events:none;z-index:0}
+[data-theme=zeszyt] .wrap,[data-theme=zeszyt] .hero-copy{position:relative}
+[data-theme=zeszyt] h1,[data-theme=zeszyt] h2,[data-theme=zeszyt] h3,[data-theme=zeszyt] h4{color:var(--a)}
+[data-theme=zeszyt] .top{background:rgba(253,253,246,.94);border-bottom:2px solid var(--a)}
+[data-theme=zeszyt] .nl{font-family:var(--fd);font-size:1.15rem;font-weight:400}
+[data-theme=zeszyt] .nl:hover,[data-theme=zeszyt] .grp.open>.nl{background:var(--hl);color:var(--fg);border-radius:3px}
+[data-theme=zeszyt] .nl[aria-current=page],[data-theme=zeszyt] .grp.cur>.nl{box-shadow:none;background:linear-gradient(transparent 55%,var(--hl) 55%);color:var(--fg);border-radius:0}
+[data-theme=zeszyt] .grp>ul{border:2px solid var(--a);border-radius:4px;box-shadow:5px 5px 0 var(--a)}
+[data-theme=zeszyt] .grp>ul a{font-family:var(--fd);font-size:1.12rem;border-radius:2px}
+[data-theme=zeszyt] .grp>ul a:hover{background:var(--hl);color:var(--fg)}
+[data-theme=zeszyt] .progress i{background:var(--a)}
+[data-theme=zeszyt] .kicker{font-family:var(--fd);font-size:1.15rem;letter-spacing:.02em;text-transform:none;font-weight:400}
+[data-theme=zeszyt] .btn{border-radius:3px;border:2px solid var(--a);box-shadow:4px 4px 0 var(--fg);font-family:var(--fd);font-size:1.2rem;font-weight:400;padding:.65em 1.3em}
+[data-theme=zeszyt] .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--fg)}
+[data-theme=zeszyt] .btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--fg)}
+[data-theme=zeszyt] .btn.ghost{background:var(--paper);color:var(--a)}
+[data-theme=zeszyt] .more{font-family:var(--fd);font-size:1.25rem;font-weight:400}
+
+[data-theme=zeszyt] .hero{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(24px,5vw,72px);align-items:center;max-width:calc(var(--wrap) + 2*clamp(16px,4vw,40px));margin:0 auto;padding:clamp(24px,5vw,64px) clamp(16px,4vw,40px) clamp(40px,6vw,72px) clamp(28px,7vw,100px);overflow:visible}
+[data-theme=zeszyt] .hero-copy{order:-1;padding:0;margin:0}
+[data-theme=zeszyt] .hero h1{font-size:clamp(3.2rem,8vw,6.8rem);line-height:.98}
+[data-theme=zeszyt] .hero h1 span,[data-theme=zeszyt] .hero h1 em{display:block;font-style:normal}
+[data-theme=zeszyt] .hero h1 em{display:inline;background:linear-gradient(transparent 52%,var(--hl) 52% 92%,transparent 92%);padding:0 .1em;color:var(--fg);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+[data-theme=zeszyt] .eyebrow{font-family:var(--fd);font-size:1.25rem;color:var(--b);transform:rotate(-1.5deg);display:inline-block}
+[data-theme=zeszyt] .lead{color:var(--fg);font-size:1.25rem}
+[data-theme=zeszyt] .hero-media{position:relative;rotate:2.4deg;background:var(--paper);padding:14px 14px 56px;box-shadow:0 14px 30px -12px rgba(30,36,48,.45);transition:rotate .6s var(--ease)}
+[data-theme=zeszyt] .hero-media:hover{rotate:0deg}
+[data-theme=zeszyt] .hero-media img{aspect-ratio:1/1;object-position:50% 58%}
+[data-theme=zeszyt] .hero-media::before{content:'';position:absolute;top:-16px;left:50%;width:120px;height:34px;margin-left:-60px;background:var(--tape);rotate:-3deg;box-shadow:0 1px 3px rgba(0,0,0,.15);-webkit-mask:linear-gradient(90deg,transparent 0 2px,#000 2px calc(100% - 2px),transparent 0);mask:linear-gradient(90deg,transparent 0 2px,#000 2px calc(100% - 2px),transparent 0)}
+[data-theme=zeszyt] .hero-media::after{content:'Nad jeziorem';position:absolute;left:18px;right:18px;bottom:14px;font:1.25rem/1 var(--fd);color:var(--a);text-align:center}
+[data-theme=zeszyt] .deco{display:none}
+@media(max-width:860px){[data-theme=zeszyt] .hero{grid-template-columns:1fr;padding-left:clamp(28px,8vw,60px)}[data-theme=zeszyt] .hero-media{order:2}}
+
+[data-theme=zeszyt] .facts dl{padding-left:clamp(28px,7vw,100px)}
+[data-theme=zeszyt] .facts dl>div{border-left:2px dashed var(--line)}
+[data-theme=zeszyt] .facts dd:not(.sm){font-weight:400;font-size:clamp(3rem,6vw,4.8rem);color:var(--a)}
+[data-theme=zeszyt] .facts dt{font-family:var(--fd);font-size:1.1rem;letter-spacing:0;text-transform:none}
+[data-theme=zeszyt] .sec .wrap{padding-left:clamp(28px,7vw,100px)}
+[data-theme=zeszyt] .sec-h h2,[data-theme=zeszyt] .pg-h h1{background:linear-gradient(transparent 62%,var(--hl) 62% 90%,transparent 90%) no-repeat;background-size:100% 100%;display:inline;-webkit-box-decoration-break:clone;box-decoration-break:clone;color:var(--fg)}
+[data-theme=zeszyt] .sec-h h2{font-size:clamp(2.2rem,4.5vw,3.6rem)}
+[data-theme=zeszyt] .pg-h h1{font-size:clamp(3rem,7vw,5.4rem)}
+[data-theme=zeszyt] .intro h2{font-size:clamp(2.2rem,4.2vw,3.4rem);color:var(--a)}
+[data-theme=zeszyt] .card{background:var(--paper);border:0;border-radius:2px;padding:12px 12px 4px;position:relative;box-shadow:0 8px 22px -12px rgba(30,36,48,.5)}
+[data-theme=zeszyt] .card:nth-child(3n+1){rotate:-1.2deg}
+[data-theme=zeszyt] .card:nth-child(3n+2){rotate:.9deg}
+[data-theme=zeszyt] .card:nth-child(3n+3){rotate:-.4deg}
+[data-theme=zeszyt] .card::before{content:'';position:absolute;top:-10px;left:50%;width:78px;height:24px;margin-left:-39px;background:var(--tape);rotate:-2deg;z-index:2;box-shadow:0 1px 2px rgba(0,0,0,.14)}
+[data-theme=zeszyt] .card:hover{rotate:0deg;transform:translateY(-6px)}
+[data-theme=zeszyt] .card-img{border-radius:0}
+[data-theme=zeszyt] .card-b{padding:.9rem .3rem 1rem}
+[data-theme=zeszyt] .card strong{font-size:1.5rem;color:var(--a);line-height:1.1}
+[data-theme=zeszyt] .card time{font-family:var(--fd);font-size:1.05rem}
+[data-theme=zeszyt] .tiles a{background:var(--paper);border:2px solid var(--a);border-radius:3px;box-shadow:5px 5px 0 var(--a)}
+[data-theme=zeszyt] .tiles a:hover{background:var(--hl);color:var(--fg);transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--a)}
+[data-theme=zeszyt] .tiles strong{font-size:1.9rem;color:var(--a)}
+[data-theme=zeszyt] .tiles a:hover strong{color:var(--fg)}
+[data-theme=zeszyt] .bld article,[data-theme=zeszyt] .bcard,[data-theme=zeszyt] .cta-box,[data-theme=zeszyt] .pn a,[data-theme=zeszyt] .note{background:var(--paper);border:2px solid var(--a);border-radius:3px;box-shadow:5px 5px 0 rgba(36,71,196,.25)}
+[data-theme=zeszyt] .chips a{font-family:var(--fd);font-size:1.15rem;font-weight:400;border:2px solid var(--a);border-radius:3px;background:var(--paper)}
+[data-theme=zeszyt] .chips a:hover{background:var(--hl);color:var(--fg);border-color:var(--a)}
+[data-theme=zeszyt] .prose p,[data-theme=zeszyt] .prose li{color:var(--fg)}
+[data-theme=zeszyt] .prose > img,[data-theme=zeszyt] .prose p>img{background:var(--paper);padding:10px;border-radius:0;box-shadow:0 10px 24px -12px rgba(30,36,48,.5);rotate:-.8deg}
+[data-theme=zeszyt] .gal img{background:var(--paper);padding:6px;border-radius:0;box-shadow:0 6px 14px -8px rgba(30,36,48,.5);aspect-ratio:1/1}
+[data-theme=zeszyt] .gal img:nth-child(odd){rotate:-1.2deg}
+[data-theme=zeszyt] .gal img:nth-child(even){rotate:1deg}
+[data-theme=zeszyt] .gal img:hover{rotate:0deg;transform:scale(1.04)}
+[data-theme=zeszyt] .prose ul.people img{background:var(--paper);padding:8px 8px 8px;box-shadow:0 8px 18px -10px rgba(30,36,48,.5);rotate:-1deg}
+[data-theme=zeszyt] .prose ul.people li:nth-child(even) img{rotate:1.1deg}
+[data-theme=zeszyt] .prose a.file{background:var(--paper);border:2px solid var(--a);border-radius:3px}
+[data-theme=zeszyt] .prose a.file::before{border-radius:2px;font-family:var(--fb)}
+[data-theme=zeszyt] .prose a.file:hover{background:var(--hl)}
+[data-theme=zeszyt] .prose blockquote{border-left:4px solid var(--a);background:var(--paper);padding:.6em 1em}
+[data-theme=zeszyt] table{background:var(--paper)}
+[data-theme=zeszyt] .years button{border:2px solid var(--a);border-radius:3px;background:var(--paper);font-family:var(--fd);font-size:1.05rem}
+[data-theme=zeszyt] .years button[aria-pressed=true]{background:var(--hl);color:var(--fg)}
+[data-theme=zeszyt] .search input{border:2px solid var(--a);border-radius:3px;background:var(--paper)}
+[data-theme=zeszyt] .faq summary{font-size:1.5rem;color:var(--a)}
+[data-theme=zeszyt] .faq details[open] summary{background:linear-gradient(transparent 62%,var(--hl) 62% 90%,transparent 90%) no-repeat;background-size:fit-content 100%}
+[data-theme=zeszyt] .foot{background:var(--a);position:relative}
+[data-theme=zeszyt] .foot::before{content:'';position:absolute;left:0;right:0;top:-12px;height:12px;background:radial-gradient(circle at 10px 12px,var(--a) 9px,transparent 10px) 0 0/20px 12px repeat-x}
+[data-theme=zeszyt] .flogo{border-radius:3px}
+[data-theme=zeszyt] .yt,[data-theme=zeszyt] .vid{border-radius:0;border:10px solid var(--paper);box-shadow:0 12px 26px -12px rgba(30,36,48,.5)}
+[data-theme=zeszyt] .dlg,[data-theme=zeszyt] .tiles a,[data-theme=zeszyt] .lb img{border-radius:3px}
+[data-theme=zeszyt] .yt-card strong,[data-theme=zeszyt] .card strong{font-weight:400}

@@ -1,0 +1,73 @@
+/* Theme "Lazura": translucent colour washes in the manner of Waldorf watercolour painting; soft serif, organic shapes, wash that drifts with the reader's scroll. */
+html[data-theme=lazura]{
+  --bg:#fbf8fc;--surface:rgba(255,255,255,.66);--fg:#2a2650;--muted:#5d5880;--line:rgba(80,70,150,.16);
+  --a:#4a3fa6;--a-ink:#fff;--b:#a8325f;--rose:#f6bfd0;--gold:#f8dc8e;--sky:#aec8f6;--lilac:#cdb9f0;
+  --fd:'Fraunces',Georgia,serif;--fb:'Instrument Sans',system-ui,sans-serif;
+  --fd-w:450;--fd-t:none;--fd-ls:-.015em;--fd-lh:1.05;--r:26px;
+}
+[data-theme=lazura] body{background:var(--bg);position:relative}
+[data-theme=lazura] body::before{content:'';position:fixed;inset:-25% -15%;z-index:-1;pointer-events:none;
+  background:
+   radial-gradient(38% 34% at 18% 22%,rgba(246,191,208,.85),transparent 72%),
+   radial-gradient(34% 38% at 82% 18%,rgba(174,200,246,.8),transparent 72%),
+   radial-gradient(40% 36% at 70% 82%,rgba(248,220,142,.7),transparent 72%),
+   radial-gradient(32% 30% at 12% 86%,rgba(205,185,240,.75),transparent 72%);
+  transform:translate3d(0,calc(var(--p,0)*-22%),0) scale(1.05);animation:drift 38s ease-in-out infinite alternate;will-change:transform}
+@keyframes drift{to{rotate:6deg}}
+[data-theme=lazura] h1 em,[data-theme=lazura] h2 em{font-style:italic;font-weight:400}
+[data-theme=lazura] h1,[data-theme=lazura] h2,[data-theme=lazura] h3{font-variation-settings:'opsz' 144,'SOFT' 100}
+[data-theme=lazura] .top{background:rgba(251,248,252,.8);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+[data-theme=lazura] .top.stuck{box-shadow:0 1px 0 var(--line)}
+[data-theme=lazura] .nl{font-weight:500}
+[data-theme=lazura] .nl:hover,[data-theme=lazura] .grp.open>.nl{background:rgba(74,63,166,.09)}
+[data-theme=lazura] .nl[aria-current=page],[data-theme=lazura] .grp.cur>.nl{box-shadow:none;background:rgba(74,63,166,.12);border-radius:999px}
+[data-theme=lazura] .grp>ul{background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+[data-theme=lazura] .progress i{background:linear-gradient(90deg,var(--rose),var(--gold),var(--sky),var(--lilac))}
+[data-theme=lazura] .btn{border-radius:999px;border-color:var(--a);padding:.9em 1.7em}
+[data-theme=lazura] .btn:hover{box-shadow:0 12px 30px -10px rgba(74,63,166,.6)}
+[data-theme=lazura] .kicker{font-family:var(--fb);letter-spacing:.16em}
+
+[data-theme=lazura] .hero{overflow:visible;display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);align-items:center;gap:clamp(24px,5vw,72px);max-width:calc(var(--wrap) + 2*clamp(16px,4vw,40px));margin:0 auto;padding:clamp(16px,4vw,48px) clamp(16px,4vw,40px) clamp(40px,6vw,80px)}
+[data-theme=lazura] .hero-copy{order:-1;padding:0;max-width:none;margin:0}
+[data-theme=lazura] .hero h1{font-size:clamp(3rem,7.2vw,6.6rem);font-weight:400;line-height:.98}
+[data-theme=lazura] .hero h1 span,[data-theme=lazura] .hero h1 em{display:block}
+[data-theme=lazura] .hero h1 em{color:var(--a)}
+[data-theme=lazura] .hero .lead{max-width:40ch}
+[data-theme=lazura] .hero-media{position:relative}
+[data-theme=lazura] .hero-media::before{content:'';position:absolute;inset:-9% -9% -7% -7%;background:radial-gradient(closest-side,rgba(248,220,142,.95),rgba(246,191,208,.8) 55%,transparent 75%);z-index:0;border-radius:50%;animation:breathe 14s ease-in-out infinite alternate}
+@keyframes breathe{to{transform:scale(1.07) rotate(8deg)}}
+[data-theme=lazura] .hero-media img{position:relative;z-index:1;aspect-ratio:4/5;border-radius:58% 42% 52% 48% / 46% 54% 46% 54%;box-shadow:0 40px 80px -30px rgba(74,63,166,.5);object-position:50% 60%}
+[data-theme=lazura] .deco{display:none}
+@media(max-width:860px){[data-theme=lazura] .hero{grid-template-columns:1fr}[data-theme=lazura] .hero-media{order:2}[data-theme=lazura] .hero-media img{aspect-ratio:1/1}}
+
+[data-theme=lazura] .facts dl{background:var(--surface);border-radius:var(--r);max-width:calc(var(--wrap) - 0px);width:calc(100% - 2*clamp(16px,4vw,40px));margin-block:0}
+[data-theme=lazura] .facts dd:not(.sm){font-weight:400;color:var(--a);font-size:clamp(2.6rem,5.5vw,4.4rem)}
+[data-theme=lazura] .facts dl>div{border-left:1px solid var(--line)}
+[data-theme=lazura] .intro h2{font-size:clamp(2rem,4vw,3.4rem)}
+[data-theme=lazura] .intro .prose{font-size:1.08rem}
+[data-theme=lazura] .intro .prose p:first-child::first-letter{font:400 4.2em/.8 var(--fd);float:left;padding:.08em .12em 0 0;color:var(--a)}
+[data-theme=lazura] .card{background:var(--surface);border:1px solid rgba(255,255,255,.9);box-shadow:0 24px 50px -30px rgba(74,63,166,.45)}
+[data-theme=lazura] .card:hover{box-shadow:0 34px 60px -28px rgba(74,63,166,.55)}
+[data-theme=lazura] .card-img{margin:10px 10px 0;border-radius:calc(var(--r) - 6px) calc(var(--r) - 6px) 46% 54% / calc(var(--r) - 6px) calc(var(--r) - 6px) 14% 14%}
+[data-theme=lazura] .card strong{font-size:1.3rem;line-height:1.2}
+[data-theme=lazura] .card.big .card-img{border-radius:calc(var(--r) - 6px)}
+[data-theme=lazura] .tiles a{background:var(--surface);border:1px solid rgba(255,255,255,.9)}
+[data-theme=lazura] .tiles li:nth-child(1) a{background:linear-gradient(150deg,rgba(246,191,208,.85),rgba(255,255,255,.7))}
+[data-theme=lazura] .tiles li:nth-child(2) a{background:linear-gradient(150deg,rgba(174,200,246,.85),rgba(255,255,255,.7))}
+[data-theme=lazura] .tiles li:nth-child(3) a{background:linear-gradient(150deg,rgba(248,220,142,.85),rgba(255,255,255,.7))}
+[data-theme=lazura] .tiles li:nth-child(4) a{background:linear-gradient(150deg,rgba(205,185,240,.85),rgba(255,255,255,.7))}
+[data-theme=lazura] .tiles a:hover{background:var(--a);color:#fff}
+[data-theme=lazura] .tiles strong{font-size:1.7rem}
+[data-theme=lazura] .bld article,[data-theme=lazura] .bcard,[data-theme=lazura] .cta-box,[data-theme=lazura] .pn a,[data-theme=lazura] .note{background:var(--surface);border:1px solid rgba(255,255,255,.9)}
+[data-theme=lazura] .chips a{background:rgba(255,255,255,.55);border-color:var(--line)}
+[data-theme=lazura] .pg-h h1{font-size:clamp(2.6rem,6.4vw,5rem)}
+[data-theme=lazura] .prose img,[data-theme=lazura] .prose p>img{border-radius:36px 20px 40px 22px / 22px 40px 20px 36px}
+[data-theme=lazura] .gal img{border-radius:20px 14px 22px 14px / 14px 22px 14px 20px}
+[data-theme=lazura] .prose ul.people img{border-radius:50% 50% 46% 46% / 40% 40% 56% 56%;aspect-ratio:1/1.12}
+[data-theme=lazura] .prose h2,[data-theme=lazura] .prose h3{color:var(--a)}
+[data-theme=lazura] .post h1{font-weight:400}
+[data-theme=lazura] .foot{background:linear-gradient(180deg,rgba(74,63,166,.96),#2b2570);border-radius:48px 48px 0 0;margin-top:2rem}
+[data-theme=lazura] .flogo{background:rgba(255,255,255,.95)}
+[data-theme=lazura] .years button[aria-pressed=true]{background:var(--a)}
+[data-theme=lazura] .yt,[data-theme=lazura] .vid{border-radius:30px}
+[data-theme=lazura] .faq summary{font-weight:450}
